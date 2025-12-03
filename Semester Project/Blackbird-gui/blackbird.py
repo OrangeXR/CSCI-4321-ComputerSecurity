@@ -51,7 +51,7 @@ def initiate():
     config.no_nsfw = False
     config.dump = False
     config.proxy = None
-    config.verbose = False          # <-- added default
+    config.verbose = False
     config.ai = False
     config.setup_ai = False
     config.timeout = 30
@@ -70,12 +70,31 @@ def initiate():
     config.splash_line = random.choice(lines) if lines else ""
 
 
-def run_blackbird_search(username=None, email=None):
+def run_blackbird_search(username=None, email=None, options=None):
     """
     Run Blackbird search for a username or email.
+    Accepts an options list with flags like --verbose, --permute, --filter "..."
     Returns a list of found accounts (dicts with 'name', 'url', 'status').
     """
     initiate()
+
+    # Apply options to config
+    if options:
+        for opt in options:
+            if opt == "--verbose":
+                config.verbose = True
+            elif opt == "--permute":
+                config.permute = True
+            elif opt == "--permuteall":
+                config.permuteall = True
+            elif opt == "--no-nsfw":
+                config.no_nsfw = True
+            elif opt.startswith("--filter"):
+                # Extract filter argument after --filter
+                parts = opt.split(" ", 1)
+                if len(parts) > 1:
+                    config.filter = parts[1].strip()
+
     results = []
 
     if username:
@@ -103,9 +122,22 @@ def cli_main():
     )
     parser.add_argument("-u", "--username", nargs="*", type=str)
     parser.add_argument("-e", "--email", nargs="*", type=str)
+    parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--permute", action="store_true")
+    parser.add_argument("--permuteall", action="store_true")
+    parser.add_argument("--no-nsfw", action="store_true")
+    parser.add_argument("--filter", type=str)
+
     args = parser.parse_args()
 
     initiate()
+
+    # Apply CLI options to config
+    config.verbose = args.verbose
+    config.permute = args.permute
+    config.permuteall = args.permuteall
+    config.no_nsfw = args.no_nsfw
+    config.filter = args.filter
 
     if args.username:
         for user in args.username:
@@ -124,3 +156,4 @@ def cli_main():
 
 if __name__ == "__main__":
     cli_main()
+

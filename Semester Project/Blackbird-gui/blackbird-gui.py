@@ -148,9 +148,19 @@ tree = ttk.Treeview(
     yscrollcommand=scroll_y.set,
     xscrollcommand=scroll_x.set
 )
-for col in ("Site", "URL", "Status"):
-    tree.heading(col, text=col)
-    tree.column(col, width=250, anchor="w")
+# for col in ("Site", "URL", "Status"):
+#     tree.heading(col, text=col)
+#     tree.column(col, width=250, anchor="w")
+tree.heading("Site", text="Site")
+tree.column("Site", width=200, anchor="w")
+
+tree.heading("URL", text="URL")
+tree.column("URL", width=460, anchor="w")   # wider
+
+tree.heading("Status", text="Status")
+tree.column("Status", width=60, anchor="w")  # narrower
+
+
 
 scroll_y.config(command=tree.yview)
 scroll_x.config(command=tree.xview)

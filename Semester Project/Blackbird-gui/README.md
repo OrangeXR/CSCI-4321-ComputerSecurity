@@ -36,4 +36,6 @@ For the gui you'll need to install tkinter<br />
 
 
 
+![image](https://github.com/user-attachments/assets/8ed204f8-eb46-4c77-b490-487fde23edb3)
+
 

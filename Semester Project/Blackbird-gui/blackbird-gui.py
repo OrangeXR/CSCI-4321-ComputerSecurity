@@ -152,10 +152,10 @@ tree = ttk.Treeview(
 #     tree.heading(col, text=col)
 #     tree.column(col, width=250, anchor="w")
 tree.heading("Site", text="Site")
-tree.column("Site", width=200, anchor="w")
+tree.column("Site", width=100, anchor="w")
 
 tree.heading("URL", text="URL")
-tree.column("URL", width=460, anchor="w")   # wider
+tree.column("URL", width=560, anchor="w")   # wider
 
 tree.heading("Status", text="Status")
 tree.column("Status", width=60, anchor="w")  # narrower

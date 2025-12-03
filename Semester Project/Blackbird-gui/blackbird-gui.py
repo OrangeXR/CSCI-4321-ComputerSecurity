@@ -110,6 +110,7 @@ def on_row_double_click(event):
 root = tk.Tk()
 root.title("Blackbird GUI")
 root.geometry("900x700")
+root.resizable(False, False)
 
 # ======================================= background image ======================================================
 
@@ -141,23 +142,27 @@ canvas.create_window(100, 180, window=email_btn, anchor="nw")
 # ======================================= search options =======================================================
 
 options_label = tk.Label(root, text="Search Options:", bg="white")
-canvas.create_window(100, 220, window=options_label, anchor="nw")
+canvas.create_window(100, 225, window=options_label, anchor="nw")
 
 verbose_var = tk.BooleanVar()
 permute_var = tk.BooleanVar()
 permuteall_var = tk.BooleanVar()
 no_nsfw_var = tk.BooleanVar()
 filter_var = tk.BooleanVar()
+# ======================================= Options layout =======================================================
+#                     X     Y
+canvas.create_window(100, 255, window=tk.Checkbutton(root, text="--verbose", variable=verbose_var, bg="white"), anchor="nw")
+canvas.create_window(200, 255, window=tk.Checkbutton(root, text="--permute", variable=permute_var, bg="white"), anchor="nw")
+canvas.create_window(300, 255, window=tk.Checkbutton(root, text="--permuteall", variable=permuteall_var, bg="white"), anchor="nw")
+canvas.create_window(420, 255, window=tk.Checkbutton(root, text="--no-nsfw", variable=no_nsfw_var, bg="white"), anchor="nw")
 
-canvas.create_window(100, 245, window=tk.Checkbutton(root, text="--verbose", variable=verbose_var, bg="white"), anchor="nw")
-canvas.create_window(100, 270, window=tk.Checkbutton(root, text="--permute", variable=permute_var, bg="white"), anchor="nw")
-canvas.create_window(100, 295, window=tk.Checkbutton(root, text="--permuteall", variable=permuteall_var, bg="white"), anchor="nw")
-canvas.create_window(100, 320, window=tk.Checkbutton(root, text="--no-nsfw", variable=no_nsfw_var, bg="white"), anchor="nw")
-canvas.create_window(100, 345, window=tk.Checkbutton(root, text="--filter", variable=filter_var, bg="white"), anchor="nw")
+custom_options_label = tk.Label(root, text="Custom Filter:", bg="white")
+canvas.create_window(100, 295, window=custom_options_label, anchor="nw")
+canvas.create_window(100, 320, window=tk.Checkbutton(root, text="--filter", variable=filter_var, bg="white"), anchor="nw")
 
 filter_entry = tk.Entry(root, width=60)
 filter_entry.insert(0, 'e.g. name=twitter or cat~social')
-canvas.create_window(100, 370, window=filter_entry, anchor="nw")
+canvas.create_window(100, 345, window=filter_entry, anchor="nw")
 
 # ======================================= progress bar and status ===============================================
 
@@ -180,14 +185,15 @@ tree = ttk.Treeview(
     columns=("Site", "URL", "Status"),
     show="headings",
     yscrollcommand=scroll_y.set,
-    xscrollcommand=scroll_x.set
+   # xscrollcommand=scroll_x.set
 )
+# ======================================= Table Column width ====================================================
 tree.heading("Site", text="Site")
-tree.column("Site", width=200, anchor="w")
+tree.column("Site", width=185, anchor="w")
 tree.heading("URL", text="URL")
-tree.column("URL", width=400, anchor="w")
+tree.column("URL", width=440, anchor="w")
 tree.heading("Status", text="Status")
-tree.column("Status", width=120, anchor="center")
+tree.column("Status", width=60, anchor="center")
 
 scroll_y.config(command=tree.yview)
 scroll_x.config(command=tree.xview)

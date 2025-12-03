@@ -38,4 +38,6 @@ For the gui you'll need to install tkinter<br />
 
 ![image](https://github.com/user-attachments/assets/8ed204f8-eb46-4c77-b490-487fde23edb3)
 
+![image](https://github.com/user-attachments/assets/6ec12360-9d32-45d1-a6f0-c1575e78bd3b)
+
 

@@ -102,9 +102,11 @@ def on_row_double_click(event):
         url = values[1]
         if url:
             webbrowser.open_new_tab(url)
+
+# ===============================================================================================================
+# ======================================= tkinter window setup ==================================================
 # ===============================================================================================================
 
-# ======================================= tkinter window setup ==================================================
 root = tk.Tk()
 root.title("Blackbird GUI")
 root.geometry("900x700")
@@ -118,7 +120,7 @@ canvas = tk.Canvas(root, width=900, height=700)
 canvas.pack(fill="both", expand=True)
 canvas.create_image(0, 0, image=bg_photo, anchor="nw")
 
-# Username
+# ======================================= username ==============================================================
 username_label = tk.Label(root, text="Username:", bg="white")
 username_entry = tk.Entry(root, width=50)
 username_btn = tk.Button(root, text="Search Username", command=run_username_search)
@@ -127,7 +129,7 @@ canvas.create_window(100, 30, window=username_label, anchor="nw")
 canvas.create_window(100, 55, window=username_entry, anchor="nw")
 canvas.create_window(100, 85, window=username_btn, anchor="nw")
 
-# Email
+# ======================================= email =================================================================
 email_label = tk.Label(root, text="Email:", bg="white")
 email_entry = tk.Entry(root, width=50)
 email_btn = tk.Button(root, text="Search Email", command=run_email_search)
@@ -136,7 +138,8 @@ canvas.create_window(100, 125, window=email_label, anchor="nw")
 canvas.create_window(100, 150, window=email_entry, anchor="nw")
 canvas.create_window(100, 180, window=email_btn, anchor="nw")
 
-# Options
+# ======================================= search options =======================================================
+
 options_label = tk.Label(root, text="Search Options:", bg="white")
 canvas.create_window(100, 220, window=options_label, anchor="nw")
 
@@ -156,7 +159,8 @@ filter_entry = tk.Entry(root, width=60)
 filter_entry.insert(0, 'e.g. name=twitter or cat~social')
 canvas.create_window(100, 370, window=filter_entry, anchor="nw")
 
-# Progress bar + status
+# ======================================= progress bar and status ===============================================
+
 progress_var = tk.IntVar()
 progress_bar = ttk.Progressbar(root, variable=progress_var, maximum=100)
 status_label = tk.Label(root, text="Idle", bg="white")
@@ -164,7 +168,7 @@ status_label = tk.Label(root, text="Idle", bg="white")
 canvas.create_window(100, 410, window=progress_bar, anchor="nw", width=700)
 canvas.create_window(100, 440, window=status_label, anchor="nw")
 
-# Table frame
+# ======================================= Table =================================================================
 table_frame = tk.Frame(root)
 canvas.create_window(100, 470, window=table_frame, anchor="nw", width=700, height=200)
 

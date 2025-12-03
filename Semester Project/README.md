@@ -21,21 +21,26 @@
         ░                  ░                     ░               ░      
 
 
-all requirements
+All requirements for Blackbird
 ```
 python3 -m venv venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-or at least
-```
-pip install aiohttp
-pip install rich
-pip install requests
-pip install chardet
-pip install reportlab
-pip install dotenv
-```
 
+_____/\\\\\\\\\\\\__/\\\________/\\\__/\\\\\\\\\\\_        
+ ___/\\\//////////__\/\\\_______\/\\\_\/////\\\///__       
+  __/\\\_____________\/\\\_______\/\\\_____\/\\\_____      
+   _\/\\\____/\\\\\\\_\/\\\_______\/\\\_____\/\\\_____     
+    _\/\\\___\/////\\\_\/\\\_______\/\\\_____\/\\\_____    
+     _\/\\\_______\/\\\_\/\\\_______\/\\\_____\/\\\_____   
+      _\/\\\_______\/\\\_\//\\\______/\\\______\/\\\_____  
+       _\//\\\\\\\\\\\\/___\///\\\\\\\\\/____/\\\\\\\\\\\_ 
+        __\////////////_______\/////////_____\///////////__
+                                  
+                                  
+
+For the gui you'll need to install tkinter
+```sudo apt-get install python3-tk```
 

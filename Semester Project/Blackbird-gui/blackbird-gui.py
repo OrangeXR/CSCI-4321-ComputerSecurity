@@ -205,14 +205,3 @@ tree.pack(expand=True, fill="both")
 tree.bind("<Double-1>", on_row_double_click)
 
 root.mainloop()
-
-
-
-
-# ================================================= add to README.md =======================================
-
-# What You Need
-# • 	Save the blackbird image as "blackbird.png" in the same folder as blackbird-gui.py 
-# • 	Install Pillow if you haven’t already:
-
-# pip install pillow

@@ -10,7 +10,7 @@
     ░          ░  ░     ░  ░░ ░      ░  ░    ░       ░     ░        ░    
         ░                  ░                     ░               ░      
 
-
+The Blackbird github repository, by p1ngul1n0, can be found <a href="https://github.com/p1ngul1n0/blackbird">here</a> <br>
 All requirements for Blackbird
 ```
 python3 -m venv venv
@@ -43,6 +43,7 @@ install Pillow if you haven't already:<br>
 
 
 ![image](https://github.com/user-attachments/assets/9a3a0df3-de76-4c27-a1d9-efc42b85c5db)
+
 
 
 

@@ -1,6 +1,6 @@
-
 import tkinter as tk
 from tkinter import ttk, messagebox
+from PIL import Image, ImageTk
 import threading
 import re
 import webbrowser
@@ -39,8 +39,6 @@ def start_search(username=None, email=None):
         options.append("--permuteall")
     if no_nsfw_var.get():
         options.append("--no-nsfw")
-
-    # Collect --filter argument if enabled
     if filter_var.get():
         filter_arg = filter_entry.get().strip()
         if filter_arg:
@@ -91,25 +89,35 @@ root = tk.Tk()
 root.title("Blackbird GUI")
 root.geometry("900x700")
 
-# Username search
-username_label = tk.Label(root, text="Username:")
-username_label.pack()
-username_entry = tk.Entry(root, width=50)
-username_entry.pack(pady=5)
-username_btn = tk.Button(root, text="Search Username", command=run_username_search)
-username_btn.pack(pady=5)
+# Load background image
+bg_image = Image.open("blackbird.png")  # Replace with your actual image path
+bg_photo = ImageTk.PhotoImage(bg_image)
 
-# Email search
-email_label = tk.Label(root, text="Email:")
-email_label.pack()
+canvas = tk.Canvas(root, width=900, height=700)
+canvas.pack(fill="both", expand=True)
+canvas.create_image(0, 0, image=bg_photo, anchor="nw")
+
+# Username
+username_label = tk.Label(root, text="Username:", bg="white")
+username_entry = tk.Entry(root, width=50)
+username_btn = tk.Button(root, text="Search Username", command=run_username_search)
+
+canvas.create_window(100, 30, window=username_label, anchor="nw")
+canvas.create_window(100, 55, window=username_entry, anchor="nw")
+canvas.create_window(100, 85, window=username_btn, anchor="nw")
+
+# Email
+email_label = tk.Label(root, text="Email:", bg="white")
 email_entry = tk.Entry(root, width=50)
-email_entry.pack(pady=5)
 email_btn = tk.Button(root, text="Search Email", command=run_email_search)
-email_btn.pack(pady=5)
+
+canvas.create_window(100, 125, window=email_label, anchor="nw")
+canvas.create_window(100, 150, window=email_entry, anchor="nw")
+canvas.create_window(100, 180, window=email_btn, anchor="nw")
 
 # Options
-options_label = tk.Label(root, text="Search Options:")
-options_label.pack(pady=5)
+options_label = tk.Label(root, text="Search Options:", bg="white")
+canvas.create_window(100, 220, window=options_label, anchor="nw")
 
 verbose_var = tk.BooleanVar()
 permute_var = tk.BooleanVar()
@@ -117,26 +125,27 @@ permuteall_var = tk.BooleanVar()
 no_nsfw_var = tk.BooleanVar()
 filter_var = tk.BooleanVar()
 
-tk.Checkbutton(root, text="--verbose", variable=verbose_var).pack(anchor="w")
-tk.Checkbutton(root, text="--permute", variable=permute_var).pack(anchor="w")
-tk.Checkbutton(root, text="--permuteall", variable=permuteall_var).pack(anchor="w")
-tk.Checkbutton(root, text="--no-nsfw", variable=no_nsfw_var).pack(anchor="w")
+canvas.create_window(100, 245, window=tk.Checkbutton(root, text="--verbose", variable=verbose_var, bg="white"), anchor="nw")
+canvas.create_window(100, 270, window=tk.Checkbutton(root, text="--permute", variable=permute_var, bg="white"), anchor="nw")
+canvas.create_window(100, 295, window=tk.Checkbutton(root, text="--permuteall", variable=permuteall_var, bg="white"), anchor="nw")
+canvas.create_window(100, 320, window=tk.Checkbutton(root, text="--no-nsfw", variable=no_nsfw_var, bg="white"), anchor="nw")
+canvas.create_window(100, 345, window=tk.Checkbutton(root, text="--filter", variable=filter_var, bg="white"), anchor="nw")
 
-tk.Checkbutton(root, text="--filter", variable=filter_var).pack(anchor="w")
 filter_entry = tk.Entry(root, width=60)
 filter_entry.insert(0, 'e.g. name=twitter or cat~social')
-filter_entry.pack(pady=2)
+canvas.create_window(100, 370, window=filter_entry, anchor="nw")
 
 # Progress bar + status
 progress_var = tk.IntVar()
 progress_bar = ttk.Progressbar(root, variable=progress_var, maximum=100)
-progress_bar.pack(fill="x", pady=5)
-status_label = tk.Label(root, text="Idle")
-status_label.pack()
+status_label = tk.Label(root, text="Idle", bg="white")
 
-# Frame for table + scrollbar
+canvas.create_window(100, 410, window=progress_bar, anchor="nw", width=700)
+canvas.create_window(100, 440, window=status_label, anchor="nw")
+
+# Table frame
 table_frame = tk.Frame(root)
-table_frame.pack(expand=True, fill="both", pady=10)
+canvas.create_window(100, 470, window=table_frame, anchor="nw", width=700, height=200)
 
 scroll_y = tk.Scrollbar(table_frame, orient="vertical")
 scroll_x = tk.Scrollbar(table_frame, orient="horizontal")
@@ -148,19 +157,12 @@ tree = ttk.Treeview(
     yscrollcommand=scroll_y.set,
     xscrollcommand=scroll_x.set
 )
-# for col in ("Site", "URL", "Status"):
-#     tree.heading(col, text=col)
-#     tree.column(col, width=250, anchor="w")
 tree.heading("Site", text="Site")
-tree.column("Site", width=100, anchor="w")
-
+tree.column("Site", width=200, anchor="w")
 tree.heading("URL", text="URL")
-tree.column("URL", width=560, anchor="w")   # wider
-
+tree.column("URL", width=400, anchor="w")
 tree.heading("Status", text="Status")
-tree.column("Status", width=60, anchor="w")  # narrower
-
-
+tree.column("Status", width=120, anchor="center")
 
 scroll_y.config(command=tree.yview)
 scroll_x.config(command=tree.xview)
@@ -172,3 +174,15 @@ tree.pack(expand=True, fill="both")
 tree.bind("<Double-1>", on_row_double_click)
 
 root.mainloop()
+
+
+
+
+# ==========================================================================================================
+
+# What You Need
+# • 	Save the blackbird image as  in the same folder as your script.
+# • 	Install Pillow if you haven’t already:
+
+
+# pip install pillow

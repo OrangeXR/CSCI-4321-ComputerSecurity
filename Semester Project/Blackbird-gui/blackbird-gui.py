@@ -6,15 +6,23 @@ import re
 import webbrowser
 from blackbird import run_blackbird_search
 
+# ==========================================================================================================
+
 # Globals to hold last search results
 last_results = []
 last_mode = None
+
+# ==========================================================================================================
+
+# ======================================= username search ==================================================
 
 def run_username_search():
     query = username_entry.get().strip()
     if not query:
         return
     start_search(username=query)
+
+# ======================================= email search with validation =====================================
 
 def run_email_search():
     query = email_entry.get().strip()
@@ -24,6 +32,8 @@ def run_email_search():
         messagebox.showerror("Invalid Email", f"'{query}' is not a valid email address.")
         return
     start_search(email=query)
+
+# ======================================= prepare search ===================================================
 
 def start_search(username=None, email=None):
     progress_var.set(0)
@@ -46,6 +56,8 @@ def start_search(username=None, email=None):
 
     threading.Thread(target=do_search, args=(username, email, options), daemon=True).start()
 
+# ======================================= search logic ========================================================
+
 def do_search(username=None, email=None, options=None):
     global last_results, last_mode
     last_results = run_blackbird_search(username=username, email=email, options=options)
@@ -53,16 +65,20 @@ def do_search(username=None, email=None, options=None):
 
     total = len(last_results) if last_results else 1
     for i, _ in enumerate(last_results or []):
-        percent = int((i + 1) / total * 100)
+        percent = int((i + 1) / total * 100) # <---------------------------------------------- calculation for status bar but currently only does it after full search is done
         progress_var.set(percent)
         root.update_idletasks()
 
     display_results(last_results)
     status_label.config(text="Search complete")
 
+# ======================================= email validation ====================================================
+
 def is_valid_email(email):
     pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
     return re.match(pattern, email) is not None
+
+# ======================================= display results in Tkinter tree ======================================
 
 def display_results(results):
     for item in tree.get_children():
@@ -74,6 +90,8 @@ def display_results(results):
             row.get("status", "")
         ))
 
+# ======================================= clickable hyperlinks ==================================================
+
 def on_row_double_click(event):
     selected_item = tree.selection()
     if not selected_item:
@@ -84,13 +102,16 @@ def on_row_double_click(event):
         url = values[1]
         if url:
             webbrowser.open_new_tab(url)
+# ===============================================================================================================
 
+# ======================================= tkinter window setup ==================================================
 root = tk.Tk()
 root.title("Blackbird GUI")
 root.geometry("900x700")
 
-# Load background image
-bg_image = Image.open("blackbird.png")  # Replace with your actual image path
+# ======================================= background image ======================================================
+
+bg_image = Image.open("blackbird.png")  # Replace with your actual image path if different that root folder
 bg_photo = ImageTk.PhotoImage(bg_image)
 
 canvas = tk.Canvas(root, width=900, height=700)
@@ -178,11 +199,10 @@ root.mainloop()
 
 
 
-# ==========================================================================================================
+# ================================================= add to README.md =======================================
 
 # What You Need
-# • 	Save the blackbird image as  in the same folder as your script.
+# • 	Save the blackbird image as "blackbird.png" in the same folder as blackbird-gui.py 
 # • 	Install Pillow if you haven’t already:
-
 
 # pip install pillow

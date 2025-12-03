@@ -36,8 +36,15 @@ For the gui you'll need to install tkinter<br />
 
 
 
-![image](https://github.com/user-attachments/assets/8ed204f8-eb46-4c77-b490-487fde23edb3)
 
-![image](https://github.com/user-attachments/assets/6ec12360-9d32-45d1-a6f0-c1575e78bd3b)
+Save the blackbird image as "blackbird.png" in the same folder as blackbird-gui.py<br>
+install Pillow if you haven't already:<br>
+``` pip install pillow ```
+
+
+![image](https://github.com/user-attachments/assets/9a3a0df3-de76-4c27-a1d9-efc42b85c5db)
+
+
+
 
 

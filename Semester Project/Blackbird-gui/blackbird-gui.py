@@ -250,7 +250,7 @@ canvas.create_window(100, 180, window=email_btn, anchor="nw")
 
 # ======================================= search options ============================================================================
 
-options_label = tk.Label(root, text="Search Options:", bg="white")
+options_label = tk.Label(root, text="Search Options:", bg="white") # <-------------------------------------------------------------------
 canvas.create_window(100, 225, window=options_label, anchor="nw")
 
 verbose_var = tk.BooleanVar()
@@ -259,14 +259,14 @@ permuteall_var = tk.BooleanVar()
 no_nsfw_var = tk.BooleanVar()
 filter_var = tk.BooleanVar()
 
-canvas.create_window(100, 255, window=tk.Checkbutton(root, text="--verbose", variable=verbose_var, bg="white"), anchor="nw")
-canvas.create_window(200, 255, window=tk.Checkbutton(root, text="--permute", variable=permute_var, bg="white"), anchor="nw")
-canvas.create_window(300, 255, window=tk.Checkbutton(root, text="--permuteall", variable=permuteall_var, bg="white"), anchor="nw")
-canvas.create_window(420, 255, window=tk.Checkbutton(root, text="--no-nsfw", variable=no_nsfw_var, bg="white"), anchor="nw")
+canvas.create_window(100, 255, window=tk.Checkbutton(root, text="--verbose", variable=verbose_var, bg="white"), anchor="nw") # <----------
+canvas.create_window(200, 255, window=tk.Checkbutton(root, text="--permute", variable=permute_var, bg="white"), anchor="nw") # <----------
+canvas.create_window(300, 255, window=tk.Checkbutton(root, text="--permuteall", variable=permuteall_var, bg="white"), anchor="nw") # <---- 
+canvas.create_window(420, 255, window=tk.Checkbutton(root, text="--no-nsfw", variable=no_nsfw_var, bg="white"), anchor="nw") # <----------
 
-custom_options_label = tk.Label(root, text="Custom Filter:", bg="white")
+custom_options_label = tk.Label(root, text="Custom Filter:", bg="white") # <--------------------------------------------------------------
 canvas.create_window(100, 295, window=custom_options_label, anchor="nw")
-canvas.create_window(100, 320, window=tk.Checkbutton(root, text="--filter", variable=filter_var, bg="white"), anchor="nw")
+canvas.create_window(100, 320, window=tk.Checkbutton(root, text="--filter", variable=filter_var, bg="white"), anchor="nw") # <------------
 
 filter_entry = tk.Entry(root, width=60)
 filter_entry.insert(0, 'e.g. name=twitter or cat~social')
@@ -276,14 +276,14 @@ canvas.create_window(100, 345, window=filter_entry, anchor="nw")
 
 progress_var = tk.IntVar()
 progress_bar = ttk.Progressbar(root, variable=progress_var, maximum=100)
-status_label = tk.Label(root, text="Idle", bg="white")
+status_label = tk.Label(root, text="Idle", bg="white") # <-----------------------------------------------------------------------------
 
 canvas.create_window(100, 410, window=progress_bar, anchor="nw", width=700)
 canvas.create_window(100, 440, window=status_label, anchor="nw")
 
 # ======================================= Count Label ==============================================================================
 
-count_label = tk.Label(root, text="Accounts found: 0", bg="white")
+count_label = tk.Label(root, text="Accounts found: 0", bg="white") # <-----------------------------------------------------------------
 canvas.create_window(100, 465, window=count_label, anchor="nw")
 
 # ======================================= Table ====================================================================================
@@ -325,3 +325,4 @@ canvas.create_window(100, 710, window=export_btn, anchor="nw")
 # ======================================= Mainloop ================================================================================
 
 root.mainloop()
+

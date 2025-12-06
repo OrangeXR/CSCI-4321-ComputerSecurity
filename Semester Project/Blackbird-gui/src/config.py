@@ -41,6 +41,7 @@ ai_analysis = None
 
 # src/config.py 
 LOG_PATH = "logs/blackbird.log" 
+
 # Defaults for CLI flags 
 username = None 
 username_file = None 
@@ -72,5 +73,5 @@ dateRaw = None
 datePretty = None 
 userAgent = None 
 splash_line = "" 
-ASSETS_DIRECTORY = os.path.join(os.path.dirname(__file__), "..", "assets")
+# ASSETS_DIRECTORY = os.path.join(os.path.dirname(__file__), "..", "assets") <- was going to use for PDF export on gui
 

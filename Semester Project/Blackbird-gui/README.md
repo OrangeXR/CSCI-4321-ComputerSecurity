@@ -66,9 +66,9 @@ Including:<br>
     ```>=``` Greater than or equal to<br>
     ```<=``` Less than or equal to<br>
     ```!=``` Not equal to<br>
-- Usage
-    ``` name~JohnDoe```<br> filter by name containing "JohnDoe"
-    ``` site=Twitter ```<br> Filter by site "Twitter"
+- Usage<br>
+    ``` name~JohnDoe```<br> filter by name containing "JohnDoe"<br>
+    ``` site=Twitter ```<br> Filter by site "Twitter"<br>
     ``` cat=social and name~JohnDoe ``` filter by category "Social" and name containing "JohnDoe"<br><br>
 - Categories<br>
    ```archived```<br>
@@ -93,3 +93,4 @@ Including:<br>
    ```video```<br>
    ```xx NSFW xx```<br><br>
   more usage instructions are found <a href="https://github.com/p1ngul1n0/blackbird/blob/main/docs/advanced-usage.md">here</a>
+

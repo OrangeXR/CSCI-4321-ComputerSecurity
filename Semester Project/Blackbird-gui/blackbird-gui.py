@@ -10,15 +10,15 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas as pdf_canvas
 from blackbird import run_blackbird_search
 
-# ==========================================================================================================
+# =============================================================================================================================
 # Globals to hold last search results
 last_results = []
 last_mode = None
 last_phrase = None
 search_results_by_phrase = {}
 
-# ==========================================================================================================
-# ======================================= username search ==================================================
+# =============================================================================================================================
+# ======================================= username search =====================================================================
 
 def run_username_search():
     query = username_entry.get().strip()
@@ -29,7 +29,7 @@ def run_username_search():
     if usernames:
         start_search(usernames=usernames)
 
-# ======================================= email search with validation =====================================
+# ======================================= email search with validation ========================================================
 
 def run_email_search():
     query = email_entry.get().strip()
@@ -44,7 +44,7 @@ def run_email_search():
     if emails:
         start_search(emails=emails)
 
-# ======================================= prepare search ===================================================
+# ======================================= prepare search ======================================================================
 
 def start_search(usernames=None, emails=None):
     progress_var.set(0)
@@ -67,7 +67,7 @@ def start_search(usernames=None, emails=None):
 
     threading.Thread(target=do_search, args=(usernames, emails, options), daemon=True).start()
 
-# ======================================= search logic ========================================================
+# ======================================= search logic ===========================================================================
 
 def do_search(usernames=None, emails=None, options=None):
     global last_results, last_mode, last_phrase, search_results_by_phrase
@@ -100,13 +100,13 @@ def do_search(usernames=None, emails=None, options=None):
 
     display_results(last_results)
 
-# ======================================= email validation ====================================================
+# ======================================= email validation =======================================================================
 
 def is_valid_email(email):
     pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
     return re.match(pattern, email) is not None
 
-# ======================================= display results in Tkinter tree ======================================
+# ======================================= display results in Tkinter tree =========================================================
 
 def display_results(results):
     for item in tree.get_children():
@@ -123,7 +123,7 @@ def display_results(results):
     count_label.config(text=f"Accounts found: {count}")
     status_label.config(text="Search complete")
 
-# ======================================= clickable hyperlinks ==================================================
+# ======================================= clickable hyperlinks =====================================================================
 
 def on_row_double_click(event):
     selected_item = tree.selection()
@@ -136,7 +136,7 @@ def on_row_double_click(event):
         if url:
             webbrowser.open_new_tab(url)
 
-# ======================================= export results to PDF ==================================================
+# ======================================= export results to PDF =====================================================================
 
 def export_results_to_pdf():
     global last_results, last_mode, last_phrase, search_results_by_phrase
@@ -210,16 +210,16 @@ def export_results_to_pdf():
         messagebox.showerror("Export Failed", f"An error occurred: {e}")
 
 
-# ===============================================================================================================
-# ======================================= tkinter window setup ==================================================
-# ===============================================================================================================
+# ==================================================================================================================================
+# ======================================= tkinter window setup =====================================================================
+# ==================================================================================================================================
 
 root = tk.Tk()
 root.title("Blackbird GUI")
 root.geometry("900x750")
 root.resizable(False, False)
 
-# ======================================= background image ======================================================
+# ======================================= background image =========================================================================
 
 bg_image = Image.open("blackbird.png")
 bg_photo = ImageTk.PhotoImage(bg_image)
@@ -228,27 +228,27 @@ canvas = tk.Canvas(root, width=900, height=750)
 canvas.pack(fill="both", expand=True)
 canvas.create_image(0, 0, image=bg_photo, anchor="nw")
 
-# ======================================= username ==============================================================
+# ======================================= username =================================================================================
 
-username_label = tk.Label(root, text="Usernames (comma separated):", bg="white")
+username_label = tk.Label(root, text="Usernames (comma separated):", bg="purple", fg="white") # <---------------------------------------------------   "Search Usernames" label (bg box, fg text)
 username_entry = tk.Entry(root, width=50)
-username_btn = tk.Button(root, text="Search Usernames", command=run_username_search)
+username_btn = tk.Button(root, text="Search Usernames", command=run_username_search, bg="red") # <--------------------------------------   "Search Usernames" button
 
 canvas.create_window(100, 30, window=username_label, anchor="nw")
 canvas.create_window(100, 55, window=username_entry, anchor="nw")
 canvas.create_window(100, 85, window=username_btn, anchor="nw")
 
-# ======================================= email =================================================================
+# ======================================= email ====================================================================================
 
-email_label = tk.Label(root, text="Emails (comma separated):", bg="white")
+email_label = tk.Label(root, text="Emails (comma separated):", bg="purple", fg="white") # <-------------------------------------------------   "Search Emails" label (bg box, fg text)
 email_entry = tk.Entry(root, width=50)
-email_btn = tk.Button(root, text="Search Emails", command=run_email_search)
+email_btn = tk.Button(root, text="Search Emails", command=run_email_search, bg="red") # <------------------------------------------------   "Search Emails" button
 
 canvas.create_window(100, 125, window=email_label, anchor="nw")
 canvas.create_window(100, 150, window=email_entry, anchor="nw")
 canvas.create_window(100, 180, window=email_btn, anchor="nw")
 
-# ======================================= search options =======================================================
+# ======================================= search options ============================================================================
 
 options_label = tk.Label(root, text="Search Options:", bg="white")
 canvas.create_window(100, 225, window=options_label, anchor="nw")
@@ -272,7 +272,7 @@ filter_entry = tk.Entry(root, width=60)
 filter_entry.insert(0, 'e.g. name=twitter or cat~social')
 canvas.create_window(100, 345, window=filter_entry, anchor="nw")
 
-# ======================================= progress bar and status ===============================================
+# ======================================= progress bar and status ==================================================================
 
 progress_var = tk.IntVar()
 progress_bar = ttk.Progressbar(root, variable=progress_var, maximum=100)
@@ -281,12 +281,12 @@ status_label = tk.Label(root, text="Idle", bg="white")
 canvas.create_window(100, 410, window=progress_bar, anchor="nw", width=700)
 canvas.create_window(100, 440, window=status_label, anchor="nw")
 
-# ======================================= Count Label ===========================================================
+# ======================================= Count Label ==============================================================================
 
 count_label = tk.Label(root, text="Accounts found: 0", bg="white")
 canvas.create_window(100, 465, window=count_label, anchor="nw")
 
-# ======================================= Table =================================================================
+# ======================================= Table ====================================================================================
 
 table_frame = tk.Frame(root)
 canvas.create_window(100, 490, window=table_frame, anchor="nw", width=700, height=200)
@@ -317,11 +317,11 @@ tree.pack(expand=True, fill="both")
 
 tree.bind("<Double-1>", on_row_double_click)
 
-# ======================================= Export Button =========================================================
+# ======================================= Export Button ============================================================================
 
-export_btn = tk.Button(root, text="Export to PDF", command=export_results_to_pdf)
+export_btn = tk.Button(root, text="Export to PDF", command=export_results_to_pdf, bg="red") # <-------------------------------------------------   "Export to PDF" button
 canvas.create_window(100, 710, window=export_btn, anchor="nw")
 
-# ======================================= Mainloop =============================================================
+# ======================================= Mainloop ================================================================================
 
 root.mainloop()

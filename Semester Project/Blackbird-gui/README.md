@@ -51,13 +51,13 @@ The filter usage for the most part is the same as the original Blackbird app
 
 Including:<br>
 - Properties<br>
-    ```name```  Name of the site being checked.<br>
-    ```cat```  Category of the site.<br>
-    ```uri_check```  The URL used to check for the existence of an account.<br>
-    ```e_code```  Expected HTTP status code when an account exists.<br>
-    ```e_string```  A string expected in the response when an account exists.<br>
-    ```m_string```  A string expected in the response when an account does not exist.<br>
-    ```m_code```  Expected HTTP status code when an account does not exist.<br>
+    ```name``` Name of the site being checked.<br>
+    ```cat``` Category of the site.<br>
+    ```uri_check``` The URL used to check for the existence of an account.<br>
+    ```e_code``` Expected HTTP status code when an account exists.<br>
+    ```e_string``` A string expected in the response when an account exists.<br>
+    ```m_string``` A string expected in the response when an account does not exist.<br>
+    ```m_code``` Expected HTTP status code when an account does not exist.<br>
 - Operators<br>
     ```=``` Equal to<br>
     ```~``` Contains<br>
@@ -67,8 +67,8 @@ Including:<br>
     ```<=``` Less than or equal to<br>
     ```!=``` Not equal to<br>
 - Usage<br>
-    ``` name~JohnDoe```<br> filter by name containing "JohnDoe"<br>
-    ``` site=Twitter ```<br> Filter by site "Twitter"<br>
+    ``` name~JohnDoe``` filter by name containing "JohnDoe"<br>
+    ``` site=Twitter ``` Filter by site "Twitter"<br>
     ``` cat=social and name~JohnDoe ``` filter by category "Social" and name containing "JohnDoe"<br><br>
 - Categories<br>
    ```archived```<br>
@@ -93,4 +93,5 @@ Including:<br>
    ```video```<br>
    ```xx NSFW xx```<br><br>
   more usage instructions are found <a href="https://github.com/p1ngul1n0/blackbird/blob/main/docs/advanced-usage.md">here</a>
+
 

@@ -47,5 +47,49 @@ install Pillow if you haven't already:<br>
 
 
 
+The filter usage for the most part is the same as the original Blackbird app
 
-
+Including:<br>
+- Properties<br>
+    ```name```  Name of the site being checked.<br>
+    ```cat```  Category of the site.<br>
+    ```uri_check```  The URL used to check for the existence of an account.<br>
+    ```e_code```  Expected HTTP status code when an account exists.<br>
+    ```e_string```  A string expected in the response when an account exists.<br>
+    ```m_string```  A string expected in the response when an account does not exist.<br>
+    ```m_code```  Expected HTTP status code when an account does not exist.<br>
+- Operators<br>
+    ```=``` Equal to<br>
+    ```~``` Contains<br>
+    ```>``` Greater than<br>
+    ```<``` Less than<br>
+    ```>=``` Greater than or equal to<br>
+    ```<=``` Less than or equal to<br>
+    ```!=``` Not equal to<br>
+- Usage
+    ``` name~JohnDoe```<br> filter by name containing "JohnDoe"
+    ``` site=Twitter ```<br> Filter by site "Twitter"
+    ``` cat=social and name~JohnDoe ``` filter by category "Social" and name containing "JohnDoe"<br><br>
+- Categories<br>
+   ```archived```<br>
+   ```art```<br>
+   ```blog```<br>
+   ```business```<br>
+   ```coding```<br>
+   ```dating```<br>
+   ```finance```<br>
+   ```gaming```<br>
+   ```health```<br>
+   ```hobby```<br>
+   ```images```<br>
+   ```misc```<br>
+   ```music```<br>
+   ```news```<br>
+   ```political```<br>
+   ```search```<br>
+   ```shopping```<br>
+   ```social```<br>
+   ```tech```<br>
+   ```video```<br>
+   ```xx NSFW xx```<br><br>
+  more usage instructions are found <a href="https://github.com/p1ngul1n0/blackbird/blob/main/docs/advanced-usage.md">here</a>

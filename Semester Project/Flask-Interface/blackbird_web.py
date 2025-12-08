@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return """
-    <h1>Blackbird Search</h1>
+    <h1>Blackbird Search</h1>such a hassle
     <form action="/search" method="get">
         <label>Username: <input type="text" name="username"></label><br>
         <label>Email: <input type="text" name="email"></label><br>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blackbird Web GUI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}
+</head>
+<body>
+  <h1>Blackbird Web Interface</h1>
+
+  <form method="POST">
+    <label>Username:</label>
+    <input type="text" name ="username" placerholder="Enter Username">
+    <br><br>
+    <label>Email:</label>
+    <input type="text" name ="email" placerholder="Enter Email">
+    <br><br>
+    <button type="submit">Search</button>
+  </form>
+
+  {% if results %}
+  <h2>Results</h2>
+  <table>
+    <tr>
+      <th>Site</th>
+      <th>URL</th>
+      <th>Status</th>
+    <tr>
+    {% for row in results %}
+    <tr>
+      <td>{{ row.name }}</td>
+      <td><a href="{{ row.url }}" target="_blank">{{ row.url }}</a></td>
+      <td>{{ row.status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</body>
+</html>

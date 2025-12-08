@@ -72,6 +72,10 @@
     │   │      └── whatsmyname/
     |   |          ├── __init__.py
     |   |          └── list_operations.py
+    │   ├── static/      <----------------------- flask folder
+            └── style.css   <-------------------- flast folder
+    │   ├── teplates/    <----------------------- flast folder
+    |   |   └── index.html  <-------------------- flast folder
     │   └── tests/
     |       ├── test_core.py
     |       ├── test_export.py
@@ -83,4 +87,8 @@
     ├── Dockerfile
     ├── READMEmd
     ├── blackbird.py
+    ├── blackbird.py <---------------- updated for gui
+    ├── blackbird_gui.py <------------ gui for the blackbird
+    ├── blackbird_web.py <------------ flask integration for blackbird
     └── requirements.txt
+

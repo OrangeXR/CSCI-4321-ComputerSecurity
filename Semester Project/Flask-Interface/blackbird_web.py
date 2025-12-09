@@ -35,4 +35,4 @@ def search():
     return render_template_string(html, results=results)
 
 if __name__ == "__main__":
-    blackbird_web.run(debug=True)
+    app.run(debug=True)

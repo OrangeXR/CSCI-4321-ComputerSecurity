@@ -28,11 +28,11 @@ sudo apt-get install python3-tk
 pip install pillow
 ```
 
-download and replace:
-blackbird.py<br />
-blackbird-gui.py<br />
-blackbird.png<br />
-blackbird_web.py<br />
+download and replace:<br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/Blackbird-gui/blackbird.py">blackbird.py</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/Blackbird-gui/blackbird-gui.py">blackbird-gui.py</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/Blackbird-gui/blackbird.png">blackbird.png</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/Flask-Interface/blackbird_web.py">blackbird_web.py</a><br />
 ```
 sudo apt install python3-flask
 
@@ -113,11 +113,12 @@ The ending file structure should look as follows:
     ├── .gitignore
     ├── Dockerfile
     ├── READMEmd
-    ├── blackbird.py
+    ├── blackbird.png <---------------- background image for gui
     ├── blackbird.py <---------------- updated for gui
     ├── blackbird_gui.py <------------ gui for the blackbird
     ├── blackbird_web.py <------------ flask integration for blackbird
     └── requirements.txt
+
 
 
 

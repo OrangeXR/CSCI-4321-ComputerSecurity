@@ -11,6 +11,37 @@
 
 
 
+=======<br />
+```
+sudo apt update
+sudo apt install git
+git clone https://github.com/p1ngul1no/blackbird
+cd blackbird
+pin install -r requirements.txt
+
+sudo apt install python3-pip
+sudo apt install python2-venv
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+sudo apt-get install python3-tk
+pip install pillow
+```
+
+download and replace:
+blackbird.py<br />
+blackbird-gui.py<br />
+blackbird.png<br />
+blackbird_web.py<br />
+```
+sudo apt install python3-flask
+
+python blackbird_web.py
+```
+
+=======<br />
+The ending file structure should look as follows:
+
     .
     ├── blackbird/
     │   ├── assets/
@@ -72,10 +103,6 @@
     │   │      └── whatsmyname/
     |   |          ├── __init__.py
     |   |          └── list_operations.py
-    │   ├── static/      <----------------------- flask folder
-            └── style.css   <-------------------- flask folder
-    │   ├── teplates/    <----------------------- flask folder
-    |   |   └── index.html  <-------------------- flask folder
     │   └── tests/
     |       ├── test_core.py
     |       ├── test_export.py
@@ -91,5 +118,6 @@
     ├── blackbird_gui.py <------------ gui for the blackbird
     ├── blackbird_web.py <------------ flask integration for blackbird
     └── requirements.txt
+
 
 

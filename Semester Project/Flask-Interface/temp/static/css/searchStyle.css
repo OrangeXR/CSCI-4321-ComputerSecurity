@@ -1,0 +1,54 @@
+/* ==========================
+   Base Styles
+========================== */
+body {
+    background-color: black; /* Set the page background to black */
+    color: white; /* Change text color to white for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+
+.Buttom2{
+    margin: 100px -75px;
+    position: absolute;
+}
+
+
+/* ==========================
+   Link Button
+========================== */
+.Buttom2 .text {
+    text-decoration: none;
+    color: #810d0d; /* dark gray text */
+    font-size: 40px;
+    margin-top: 50px;
+    margin: 420px 590px;
+    padding: 8px 20px;
+    border: 2px solid #810d0d; /* gray border */
+    border-radius: 20px;
+    background-color: hsl(0, 88%, 3%); /* light gray button */
+    cursor: pointer;
+    font-family: 'Nosifer',sans-serif;
+ 
+}
+
+  .img2{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        background-color: #000000; /* light gray background */
+    }
+
+    .images2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    .images2 .img2.room{
+    width: clamp(1000px, 400px, 900px);
+    margin: -35px 145px;
+    height: auto;
+}

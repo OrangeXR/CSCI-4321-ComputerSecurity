@@ -198,3 +198,7 @@ Including:<br>
 
 [YouTube - Video Demo](https://youtu.be/Fedq22tXuIU)
 
+
+## Computer Security - Fall 2025
+
+Project by: <a href="https://github.com/OrangeXR">Luis M</a>, <a href="https://github.com/AlexandriaTH">Taja H</a>, <a href="https://github.com/picklefarm1234">Abigail R</a>

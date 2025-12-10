@@ -1,9 +1,9 @@
 # Computer Security
 
 
-[Installation](#Installation)</a ><br />
-[File Structure](#FileStructure)</a ><br />
-[Commands](#Commands)</a ><br />
+[Installation](#installation)</a ><br />
+[File Structure](#filestructure)</a ><br />
+[Commands](#commands)</a ><br />
 
 =======<br />
 
@@ -23,7 +23,7 @@
 The Blackbird github repository, by p1ngul1n0, can be found <a href="https://github.com/p1ngul1n0/blackbird">here</a> <br>
 
 
-=======<br />
+=======<a name="installation">Installation</a><br />Installation</a>
 ```
 sudo apt update
 sudo apt install git
@@ -51,7 +51,7 @@ sudo apt install python3-flask
 python blackbird_web.py
 ```
 
-=======<br />
+=======<a name="filestructure">File Structure</a><br />
 The ending file structure should look as follows:
 
     .
@@ -147,7 +147,7 @@ _____/\\\\\\\\\\\\__/\\\________/\\\__/\\\\\\\\\\\_
 ```
 
 
-
+==========<a name="commands">Commands</a><br />
 The filter usage for the most part is the same as the original Blackbird app
 
 Including:<br>
@@ -194,6 +194,7 @@ Including:<br>
    ```video```<br>
    ```xx NSFW xx```<br><br>
   more usage instructions are found <a href="https://github.com/p1ngul1n0/blackbird/blob/main/docs/advanced-usage.md">here</a>
+
 
 
 

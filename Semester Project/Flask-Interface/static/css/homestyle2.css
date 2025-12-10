@@ -1,0 +1,43 @@
+{% extends 'SearchSetup.html' %}
+
+{% block head %}
+    <title>Blackbird Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchStyle.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="img2">
+    <div class="images2">
+        <img src="{{ url_for('static', filename='Pictures/blackbird.png') }}" alt="class2" class="room2">
+    </div>
+
+    <div class="input1">
+        <h1>Search Username/Email</h1>
+        <form action="/search" method="POST">
+            <label for="username" class="text2">Enter Username(s):</label>
+            <input type="text" id="username" name="username" class="text" placeholder="alice,bob,charlie"><br><br>
+
+            <label for="email" class="text2">Enter Email(s):</label>
+            <input type="email" id="email" name="email" class="text" placeholder="a@x.com,b@y.com"><br><br>
+
+            <div class="ButtomEm">
+                <input type="submit" value="Search" class="text">
+            </div>
+        </form>
+    </div>
+
+    <div class="Results">
+        <h1>Search Results</h1>
+        {% if results %}
+            <ul>
+            {% for account in results %}
+                <li>{{ account['name'] }} - <a href="{{ account['url'] }}">{{ account['url'] }}</a> ({{ account['status'] }})</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-username-or-email-found">No data found. Please enter another username or email.</p>
+        {% endif %}
+        <a href="/" class="text">Back Home</a>
+    </div>
+</div>
+{% endblock %}

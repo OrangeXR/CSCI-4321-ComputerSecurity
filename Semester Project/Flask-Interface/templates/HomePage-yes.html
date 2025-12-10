@@ -1,0 +1,22 @@
+{% extends 'HomepageSetup.html' %}
+
+{% block head %}
+    <title>Blackbird</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homestyle2.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="background-container">
+    <div class="content">
+        <form action="/search" method="get">
+            <label>Username(s): 
+                <input type="text" name="username" placeholder="alice,bob,charlie">
+            </label><br>
+            <label>Email(s): 
+                <input type="text" name="email" placeholder="a@x.com,b@y.com">
+            </label><br>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+{% endblock %}

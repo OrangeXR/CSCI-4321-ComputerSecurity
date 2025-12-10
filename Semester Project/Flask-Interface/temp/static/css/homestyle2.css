@@ -15,27 +15,6 @@ body {
 }
 
 
-.background-container {
-    /* Use your PNG as background */
-    background-image: url("../Pictures/blackbird1.png");
-    background-size: cover;       /* Scale to fit */
-    background-position: center;  /* Center the image */
-    background-repeat: no-repeat;
-    width: 100%;                  /* Full width */
-    height: 100vh;                /* Full viewport height */
-    display: flex;                /* Flexbox for centering */
-    justify-content: center;      /* Center horizontally */
-    align-items: center;          /* Center vertically */
-}
-
-.content {
-    background-color: rgba(255, 255, 255, 0.8); /* optional translucent box */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-
-
 /* ==========================
    Link Button
 ========================== */

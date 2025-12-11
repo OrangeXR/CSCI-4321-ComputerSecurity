@@ -45,19 +45,17 @@ download and replace:<br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/blackbird-gui.py">blackbird-gui.py</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/blackbird.png">blackbird.png</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/blackbird_web.py">blackbird_web.py</a><br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/requirements.txt">requirements.txt</a>t<br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/requirements.txt">requirements.txt</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/src/config.py">config.py</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/src/modules/core/emailCSProject.py">emailCSProject.py</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/src/modules/core/usernameCSProject.py">usernameCSProject.py</a><br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/Homepage.png"></a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/Homepage.png">Homepage.png</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/Untitled7_20251209075801.PNG">Untitled7_20251209075801.PNG</a><br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/blackbird.png"></a>blackbird.png<br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/blackbird1.png"></a>blackbird1.png<br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/blackbird2.png"></a>blackbird2.png<br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/css/"></a><br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/css/"></a><br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/homestyle2.css"></a>homestyle2.css<br />
-<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/searchStyle.css">searchStyle.css</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/blackbird.png">blackbird.png</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/blackbird1.png">blackbird1.png</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/Pictures/blackbird2.png">blackbird2.png</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/css/homestyle2.css">homestyle2.css</a><br />
+<a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/static/css/searchStyle.css">searchStyle.css</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/templates/HomePage.html">HomePage.html</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/templates/HomepageSetup.html">HomepageSetup.html</a><br />
 <a href="https://github.com/OrangeXR/CSCI-4321-ComputerSecurity/blob/main/Semester%20Project/templates/Search.html">Search.html</a><br />
@@ -222,6 +220,7 @@ Including:<br>
 
 Project by: <a href="https://github.com/OrangeXR">Luis M</a>, <a href="https://github.com/AlexandriaTH">Taja H</a>, <a href="https://github.com/picklefarm1234">Abigail R</a><br>
 <a href="https://github.com/OrangeXR" title="Luis M"><img width="50" height="50" alt="A graphic-heavy logo" src="https://avatars.githubusercontent.com/u/77978673?s=64&v=4" /></a><a href="https://github.com/AlexandriaTH" title="Taja H"><img width="50" height="50" alt="A graphic-heavy logo" src="https://avatars.githubusercontent.com/u/118304167?v=4" /></a><a href="https://github.com/picklefarm1234" title="Abigail R"><img width="50" height="50" alt="A graphic-heavy logo" src="https://avatars.githubusercontent.com/u/230457100?v=4" /></a>
+
 
 
 

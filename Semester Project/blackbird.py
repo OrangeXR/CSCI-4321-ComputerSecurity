@@ -14,9 +14,9 @@ from modules.core.username import verifyUsername
 from modules.core.email import verifyEmail
 from modules.utils.userAgent import getRandomUserAgent
 from modules.export.file_operations import createSaveDirectory
-from modules.export.csv import saveToCsv   # option to add to gui
-from modules.export.pdf import saveToPdf   # option to add to gui
-from modules.export.json import saveToJson # option to add to gui
+from modules.export.csv import saveToCsv   # <------------------------------------------------- option to add to gui (2)
+from modules.export.pdf import saveToPdf   # <------------------------------------------------- option to add to gui (Done)
+from modules.export.json import saveToJson # <------------------------------------------------- option to add to gui (3)
 from modules.utils.file_operations import isFile, getLinesFromFile
 from modules.utils.permute import Permute
 from dotenv import load_dotenv

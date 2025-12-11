@@ -92,7 +92,9 @@ The ending file structure should look as follows:
     |   |      |   └── key_manager.py
     │   │      ├── core/
     |   |      |   ├── email.py
-    |   |      |   └── username.py
+    |   |      |   ├── emailCSProject.py
+    |   |      |   ├── username.py
+    |   |      |   └── usernameCSProject.py
     │   │      ├── export/
     │   │      |   ├── csv.py
     │   │      |   ├── dump.py
@@ -203,4 +205,5 @@ Including:<br>
 
 Project by: <a href="https://github.com/OrangeXR">Luis M</a>, <a href="https://github.com/AlexandriaTH">Taja H</a>, <a href="https://github.com/picklefarm1234">Abigail R</a><br>
 <a href="https://github.com/OrangeXR" title="Luis M"><img width="50" height="50" alt="A graphic-heavy logo" src="https://avatars.githubusercontent.com/u/77978673?s=64&v=4" /></a><a href="https://github.com/AlexandriaTH" title="Taja H"><img width="50" height="50" alt="A graphic-heavy logo" src="https://avatars.githubusercontent.com/u/118304167?v=4" /></a><a href="https://github.com/picklefarm1234" title="Abigail R"><img width="50" height="50" alt="A graphic-heavy logo" src="https://avatars.githubusercontent.com/u/230457100?v=4" /></a>
+
 

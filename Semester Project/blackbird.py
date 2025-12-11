@@ -14,9 +14,9 @@ from modules.core.username import verifyUsername
 from modules.core.email import verifyEmail
 from modules.utils.userAgent import getRandomUserAgent
 from modules.export.file_operations import createSaveDirectory
-from modules.export.csv import saveToCsv
-from modules.export.pdf import saveToPdf
-from modules.export.json import saveToJson
+from modules.export.csv import saveToCsv   # option to add to gui
+from modules.export.pdf import saveToPdf   # option to add to gui
+from modules.export.json import saveToJson # option to add to gui
 from modules.utils.file_operations import isFile, getLinesFromFile
 from modules.utils.permute import Permute
 from dotenv import load_dotenv
@@ -39,7 +39,7 @@ def initiate():
     config.datePretty = datetime.now().strftime("%B %d, %Y")
     config.userAgent = getRandomUserAgent(config)
 
-    # Initialize defaults for attributes normally set by argparse
+    # Initialize default values for attributes
     config.username = None
     config.username_file = None
     config.permute = False
@@ -78,7 +78,7 @@ def run_blackbird_search(username=None, email=None, options=None):
     """
     initiate()
 
-    # Apply options to config
+    # search options
     if options:
         for opt in options:
             if opt == "--verbose":
@@ -113,7 +113,7 @@ def run_blackbird_search(username=None, email=None, options=None):
 
     return results
 
-
+# Leave alone
 def cli_main():
     """Original CLI entry point, preserved for command-line use."""
     parser = argparse.ArgumentParser(
@@ -132,7 +132,6 @@ def cli_main():
 
     initiate()
 
-    # Apply CLI options to config
     config.verbose = args.verbose
     config.permute = args.permute
     config.permuteall = args.permuteall
